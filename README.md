@@ -73,5 +73,5 @@ Puoi provare l’app direttamente qui 👉 [Counter App Online](https://counter-
 
 1. Clona la repository:
    ```bash
-   git clone https://github.com/TUO-USERNAME/counter-app.git
+   git clone https://github.com/CristianoDAlterio/counter-app.git
 # counter-app
