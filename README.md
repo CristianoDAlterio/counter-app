@@ -39,25 +39,26 @@ Lo scopo è esercitarsi con la **manipolazione del DOM**, l’uso di **SCSS** e 
 
 ## 📂 Struttura progetto
 
+```plaintext
 counter-app/
 │── index.html
 │── assets/
-│ ├── css/
-│ │ └── style.css
-│ ├── scss/
-│ │ ├── style.scss
-│ │ ├── _variables.scss
-│ │ ├── _mixins.scss
-│ │ ├── _base.scss
-│ │ ├── _layout.scss
-│ │ └── _components.scss
-│ ├── js/
-│ │ ├── script.js
-│ │ └── modules/
-│ │ └── counter.js
-│ └── img/
-│   ├── app_0.jpg
-│   └── app_count.jpg
+│   ├── css/
+│   │   └── style.css
+│   ├── scss/
+│   │   ├── style.scss
+│   │   ├── _variables.scss
+│   │   ├── _mixins.scss
+│   │   ├── _base.scss
+│   │   ├── _layout.scss
+│   │   └── _components.scss
+│   ├── js/
+│   │   ├── script.js
+│   │   └── modules/
+│   │       └── counter.js
+│   └── img/
+│       ├── app_0.jpg
+│       └── app_count.jpg
 │── README.md
 
 
