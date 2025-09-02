@@ -1,0 +1,14 @@
+#app {
+  @include flex-center;
+  height: 100vh;
+}
+
+.counter-value {
+  font-size: 3rem;
+  margin: $spacing-unit 0;
+}
+
+.btn {
+  min-width: 60px;
+  font-size: 1.5rem;
+}
