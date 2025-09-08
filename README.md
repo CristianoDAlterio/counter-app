@@ -62,9 +62,6 @@ counter-app/
 │── README.md
 ``` 
 
-``` 
----
-
 ---
 
 ## 🚀 Deploy
