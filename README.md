@@ -62,9 +62,8 @@ counter-app/
 │── README.md
 ``` 
 
----
-
 ``` 
+---
 
 ---
 
