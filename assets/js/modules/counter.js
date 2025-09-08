@@ -3,60 +3,57 @@
 // Variabile di stato
 let counter = 0;
 
+// Funzione helper per creare elementi DOM
+function createElement(tag, className, text) {
+  const el = document.createElement(tag);
+  if (className) el.className = className;
+  if (text) el.textContent = text;
+  return el;
+}
+
 // Funzione per creare il componente Counter
 export function createCounter(containerId) {
   const app = document.getElementById(containerId);
 
   // Contenitore principale
-  const card = document.createElement("div");
-  card.className = "card text-center shadow p-4";
+  const card = createElement("div", "card text-center shadow p-4");
 
   // Titolo
-  const title = document.createElement("h1");
-  title.textContent = "Counter App";
+  const title = createElement("h1", null, "Counter App");
 
   // Valore del counter
-  const counterValue = document.createElement("h2");
-  counterValue.textContent = counter;
-  counterValue.className = "my-4 display-4 counter-value";
+  const counterValue = createElement("h2", "my-4 display-4 counter-value", counter);
 
   // Gruppo pulsanti
-  const btnGroup = document.createElement("div");
-  btnGroup.className = "d-flex justify-content-around";
+  const btnGroup = createElement("div", "d-flex justify-content-around");
 
-  const btnDecrement = document.createElement("button");
-  btnDecrement.textContent = "−";
-  btnDecrement.className = "btn btn-danger btn-lg";
+  const btnDecrement = createElement("button", "btn btn-danger btn-lg", "−");
+  btnDecrement.dataset.action = "decrement";
 
-  const btnIncrement = document.createElement("button");
-  btnIncrement.textContent = "+";
-  btnIncrement.className = "btn btn-success btn-lg";
+  const btnIncrement = createElement("button", "btn btn-success btn-lg", "+");
+  btnIncrement.dataset.action = "increment";
 
-  // Funzioni
+  btnGroup.append(btnDecrement, btnIncrement);
+
+  // Funzione per aggiornare il valore
   function updateCounter() {
     counterValue.textContent = counter;
   }
 
-  btnIncrement.addEventListener("click", () => {
-    counter++;
-    updateCounter();
-  });
-
-  btnDecrement.addEventListener("click", () => {
-    if (counter > 0) {
-      counter--; // scala solo se è maggiore di 0
+  updateCounter();
+  
+  // Event delegation su btnGroup
+  btnGroup.addEventListener("click", (event) => {
+    const action = event.target.dataset.action;
+    if (action === "increment") {
+      counter++;
+    } else if (action === "decrement" && counter > 0) {
+      counter--;
     }
     updateCounter();
   });
 
-
   // Montaggio DOM
-  btnGroup.appendChild(btnDecrement);
-  btnGroup.appendChild(btnIncrement);
-
-  card.appendChild(title);
-  card.appendChild(counterValue);
-  card.appendChild(btnGroup);
-
+  card.append(title, counterValue, btnGroup);
   app.appendChild(card);
 }
